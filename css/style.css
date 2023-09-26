@@ -1,0 +1,230 @@
+:root {
+  --main-back-color: rgb(230, 230, 250);
+  --light-container-color: rgb(203, 218, 233);
+  --dark-container-color: rgb(175, 192, 210);
+  --sky-blue-color: rgba(0, 153, 255, 0.813);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+}
+.chatBot,
+.avatarBox,
+.avatars,
+.displayBox {
+  display: flex;
+}
+.chatBot,
+.displayBox {
+  flex-direction: column;
+}
+.logo h1 {
+  margin: 35px auto 0;
+  font-size: 56px;
+  color: var(--sky-blue-color);
+  font-family: "Sedgwick Ave Display", cursive;
+  text-align: center;
+}
+.chooseAvatar {
+  font-family: "Ubuntu Mono";
+  align-self: center;
+  font-size: 26px;
+  color: var(--sky-blue-color);
+  font-weight: 600;
+  padding-left: 5%;
+}
+.chatBot {
+  position: relative;
+  z-index: 2;
+  margin: 10vh auto;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  background-color: var(--main-back-color);
+  box-shadow: 0px 8px 14px 0px rgba(0, 0, 0, 0.1);
+}
+.rotateBox {
+  position: absolute;
+  top: 15%;
+  left: 24.2%;
+  opacity: 35%;
+  width: 700px;
+  height: 500px;
+  z-index: -1;
+  background: url("../img/codes.jpg");
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  transform: rotate(-5deg);
+  box-shadow: 5px 8px 14px 0px rgba(0, 0, 0, 0.1);
+}
+.avatars {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.avatarBox {
+  flex-wrap: nowrap;
+}
+.displayBox {
+  width: 500px;
+}
+.avatar {
+  cursor: pointer;
+}
+.avatar:hover {
+  border: 2px;
+  transform: scale(1.05);
+}
+.avatar:active {
+  border: 1px;
+  transform: scale(1);
+}
+.displayBox {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-height: 60vh;
+  overflow-y: scroll;
+}
+
+.displayBox::-webkit-scrollbar {
+  width: 15px;
+}
+
+.displayBox::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 8px;
+}
+
+.displayBox::-webkit-scrollbar-thumb {
+  background: var(--sky-blue-color);
+  border-radius: 10px;
+}
+
+.displayBox::-webkit-scrollbar-thumb:hover {
+  background: var(--sky-blue-color);
+}
+
+.pinnedMessage {
+  margin: 15px auto;
+  text-align: center;
+}
+.inputArea {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.input {
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+  width: 500px;
+  height: 35px;
+  font-size: 18px;
+  padding-left: 5px;
+  padding-right: 50px;
+  margin-bottom: 10px;
+  outline: none;
+  border: unset;
+}
+::placeholder {
+  opacity: 60%;
+}
+.btn img {
+  cursor: pointer;
+  z-index: 5;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: -5px;
+}
+.btn img:hover {
+  border: 2px;
+  transform: scale(1.05);
+}
+.btn img:active {
+  border: 1px;
+  transform: scale(1);
+}
+
+.container {
+  text-wrap: wrap;
+  border: 2px solid #dedede;
+  background-color: var(--light-container-color);
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px 10px;
+  box-shadow: 0px 8px 14px 0px rgba(0, 0, 0, 0.1);
+}
+
+.userCont {
+  text-align: right;
+  border-color: #ccc;
+  background-color: var(--dark-container-color);
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.botCont img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.userCont img {
+  max-width: 60px;
+  width: 100%;
+  float: right;
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+.time-right {
+  float: right;
+  color: var(--sky-blue-color);
+}
+
+.time-left {
+  float: left;
+  color: var(--sky-blue-color);
+}
+
+@media (max-width: 768px) {
+  .logo h1 {
+    margin: 15px auto 0;
+    font-size: 40px;
+  }
+  .chooseAvatar {
+    font-size: 20px;
+  }
+  .chatBot {
+    border-radius: 10px;
+    width: 95vw;
+  }
+  .rotateBox {
+    display: none;
+  }
+  .displayBox {
+    width: 90vw;
+  }
+  .input {
+    border-radius: 10px;
+    width: 85vw;
+    font-size: 14px;
+  }
+  .avatarBox {
+    flex-direction: column;
+  }
+  .pinnedMessage {
+    font-size: 14px;
+  }
+}
